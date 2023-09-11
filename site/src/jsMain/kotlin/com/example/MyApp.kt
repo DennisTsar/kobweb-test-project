@@ -73,6 +73,13 @@ fun MyApp(content: @Composable () -> Unit) {
                     A("/success/x/x") {
                         Text("Mapped/Dynamic: Test2")
                     }
+                    // backend
+                    A("/backend/apis") {
+                        Text("Apis")
+                    }
+                    A("/backend/streams") {
+                        Text("Api Streams")
+                    }
                 }
                 content()
             }
