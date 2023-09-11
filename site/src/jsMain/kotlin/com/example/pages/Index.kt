@@ -1,11 +1,53 @@
 package com.example.pages
 
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import com.example.*
+import com.varabyte.kobweb.compose.css.AnimationIterationCount
+import com.varabyte.kobweb.compose.foundation.layout.Box
+import com.varabyte.kobweb.compose.foundation.layout.Column
+import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Colors
+import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.core.Page
+import com.varabyte.kobweb.silk.components.animation.toAnimation
+import com.varabyte.kobweb.silk.components.style.toModifier
+import com.varabyte.kobweb.silk.components.text.SpanText
+import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.s
 
 @Page
 @Composable
 fun HomePage() {
-    // TODO: Add content here
-    println("Hello World!")
+    Column(Modifier.fillMaxSize()) {
+        TestBox("red", RedBackgroundStyle.toModifier())
+        TestBox("green", GreenBackgroundStyle.toModifier())
+        TestBox("blue darker on hover", BlueDarkenOnHoverStyle.toModifier())
+        TestBox("pink", RedBackgroundStyle.toModifier(LightRedVariant))
+        TestBox("light green", GreenBackgroundStyle.toModifier(LightGreenVariant))
+        TestBox("black", ReplacedByBlackStyle.toModifier())
+
+        TestBox(
+            "slide animation",
+            Modifier
+                .backgroundColor(Colors.Black)
+                .animation(
+                    SlideAnimation.toAnimation(duration = 5.s, iterationCount = AnimationIterationCount.Infinite)
+                )
+        )
+        TestBox(
+            "shrink animation",
+            Modifier
+                .backgroundColor(Colors.Black)
+                .animation(
+                    ShrinkAnimation.toAnimation(duration = 5.s, iterationCount = AnimationIterationCount.Infinite)
+                )
+        )
+    }
+}
+
+@Composable
+private fun TestBox(description: String, modifier: Modifier) {
+    Box(modifier.size(100.px)) {
+        SpanText(description, Modifier.backgroundColor(Colors.White).color(Colors.Black))
+    }
 }
