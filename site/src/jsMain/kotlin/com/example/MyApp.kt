@@ -88,6 +88,13 @@ fun MyApp(content: @Composable () -> Unit) {
                     A("/libtest/test1") {
                         Text("LibTest: Test1")
                     }
+                    //markdown
+                    A("/markdown") {
+                        Text("Markdown")
+                    }
+                    A("/lib/markdown") {
+                        Text("Lib Markdown")
+                    }
                 }
                 content()
             }
