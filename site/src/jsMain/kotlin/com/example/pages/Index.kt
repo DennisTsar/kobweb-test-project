@@ -3,6 +3,7 @@ package com.example.pages
 import androidx.compose.runtime.Composable
 import com.example.*
 import com.varabyte.kobweb.compose.css.AnimationIterationCount
+import com.varabyte.kobweb.compose.css.functions.url
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -42,12 +43,15 @@ fun HomePage() {
                     ShrinkAnimation.toAnimation(duration = 5.s, iterationCount = AnimationIterationCount.Infinite)
                 )
         )
+
+        TestBox("mainimage", Modifier.backgroundImage(url("/mainimage.png")).width(200.px))
+        TestBox("libimage", Modifier.backgroundImage(url("/libimage.png")).width(200.px))
     }
 }
 
 @Composable
 private fun TestBox(description: String, modifier: Modifier) {
-    Box(modifier.size(100.px)) {
+    Box(Modifier.size(100.px).then(modifier)) {
         SpanText(description, Modifier.backgroundColor(Colors.White).color(Colors.Black))
     }
 }
