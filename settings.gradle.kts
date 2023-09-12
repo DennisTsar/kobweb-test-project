@@ -9,3 +9,4 @@ pluginManagement {
 rootProject.name = "example"
 
 include(":site")
+include(":lib")

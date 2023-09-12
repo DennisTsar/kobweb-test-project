@@ -1,31 +1,21 @@
-import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import com.varabyte.kobweb.gradle.library.util.configAsKobwebLibrary
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.compose)
-    alias(libs.plugins.kobweb.application)
+    alias(libs.plugins.kobweb.library)
     alias(libs.plugins.kobwebx.markdown)
 }
 
-group = "com.example"
+group = "com.example.lib"
 version = "1.0-SNAPSHOT"
 
-kobweb {
-    app {
-        index {
-            description.set("Powered by Kobweb")
-        }
-    }
-}
-
 kotlin {
-    configAsKobwebApplication("example", includeServer = true)
-
+    configAsKobwebLibrary(includeServer = true)
     sourceSets {
         val commonMain by getting {
             dependencies {
                 implementation(compose.runtime)
-                implementation(project(":lib"))
             }
         }
 

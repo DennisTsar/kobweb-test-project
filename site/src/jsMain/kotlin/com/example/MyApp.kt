@@ -80,6 +80,14 @@ fun MyApp(content: @Composable () -> Unit) {
                     A("/backend/streams") {
                         Text("Api Streams")
                     }
+                    // lib
+                    A("/lib/test1") {
+                        Text("Lib: Test1")
+                    }
+                    // libtest
+                    A("/libtest/test1") {
+                        Text("LibTest: Test1")
+                    }
                 }
                 content()
             }
