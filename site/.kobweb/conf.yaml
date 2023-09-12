@@ -4,11 +4,11 @@ site:
 server:
   files:
     dev:
-      contentRoot: "build/processedResources/js/main/public"
-      script: "build/dist/js/developmentExecutable/example.js"
+      contentRoot: "build/processedResources/frontend/main/public"
+      script: "build/dist/frontend/developmentExecutable/example.js"
       api: "build/libs/example.jar"
     prod:
-      script: "build/dist/js/productionExecutable/example.js"
+      script: "build/dist/frontend/productionExecutable/example.js"
       siteRoot: ".kobweb/site"
 
   port: 8080

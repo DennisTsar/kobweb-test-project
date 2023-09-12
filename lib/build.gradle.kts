@@ -11,20 +11,25 @@ group = "com.example.lib"
 version = "1.0-SNAPSHOT"
 
 kotlin {
-    configAsKobwebLibrary(includeServer = true)
+    configAsKobwebLibrary(includeServer = true, jsTargetName = "frontendLib", jvmTargetName = "backendLib")
     sourceSets {
         commonMain.dependencies {
             implementation(compose.runtime)
         }
-        jsMain.dependencies {
-            implementation(compose.html.core)
-            implementation(libs.kobweb.core)
-            implementation(libs.kobweb.silk)
-            implementation(libs.silk.icons.fa)
-            implementation(libs.kobwebx.markdown)
+
+        val frontendLibMain by getting {
+            dependencies {
+                implementation(compose.html.core)
+                implementation(libs.kobweb.core)
+                implementation(libs.kobweb.silk)
+                implementation(libs.silk.icons.fa)
+                implementation(libs.kobwebx.markdown)
+            }
         }
-        jvmMain.dependencies {
-            implementation(libs.kobweb.api)
+        val backendLibMain by getting {
+            dependencies {
+                implementation(libs.kobweb.api)
+            }
         }
     }
 }
