@@ -19,7 +19,7 @@ kobweb {
 }
 
 kotlin {
-    configAsKobwebApplication("example", includeServer = true)
+    configAsKobwebApplication("example", includeServer = true, jsTargetName = "frontend", jvmTargetName = "backend")
 
     sourceSets {
         val commonMain by getting {
@@ -29,7 +29,7 @@ kotlin {
             }
         }
 
-        val jsMain by getting {
+        val frontendMain by getting {
             dependencies {
                 implementation(compose.html.core)
                 implementation(libs.kobweb.core)
@@ -38,7 +38,7 @@ kotlin {
                 implementation(libs.kobwebx.markdown)
             }
         }
-        val jvmMain by getting {
+        val backendMain by getting {
             dependencies {
                 implementation(libs.kobweb.api)
             }

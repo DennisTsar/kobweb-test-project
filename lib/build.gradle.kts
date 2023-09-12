@@ -11,7 +11,7 @@ group = "com.example.lib"
 version = "1.0-SNAPSHOT"
 
 kotlin {
-    configAsKobwebLibrary(includeServer = true)
+    configAsKobwebLibrary(includeServer = true, jsTargetName = "frontendLib", jvmTargetName = "backendLib")
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -19,7 +19,7 @@ kotlin {
             }
         }
 
-        val jsMain by getting {
+        val frontendLibMain by getting {
             dependencies {
                 implementation(compose.html.core)
                 implementation(libs.kobweb.core)
@@ -28,7 +28,7 @@ kotlin {
                 implementation(libs.kobwebx.markdown)
             }
         }
-        val jvmMain by getting {
+        val backendLibMain by getting {
             dependencies {
                 implementation(libs.kobweb.api)
             }
