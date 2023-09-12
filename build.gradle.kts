@@ -5,6 +5,12 @@ plugins {
 
 subprojects {
     repositories {
+        mavenLocal {
+            content {
+                includeGroupAndSubgroups("com.varabyte.kobweb")
+                includeGroupAndSubgroups("com.varabyte.kobwebx")
+            }
+        }
         mavenCentral()
         maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         google()
