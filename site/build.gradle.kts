@@ -19,7 +19,7 @@ kobweb {
 }
 
 kotlin {
-    configAsKobwebApplication("example", includeServer = true)
+    configAsKobwebApplication("example")
 
     sourceSets {
         commonMain.dependencies {
@@ -33,9 +33,6 @@ kotlin {
             implementation(libs.kobweb.silk)
             implementation(libs.silk.icons.fa)
             implementation(libs.kobwebx.markdown)
-        }
-        jvmMain.dependencies {
-            implementation(libs.kobweb.api)
         }
     }
 }
