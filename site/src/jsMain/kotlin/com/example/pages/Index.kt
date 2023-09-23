@@ -2,7 +2,6 @@ package com.example.pages
 
 import androidx.compose.runtime.Composable
 import com.example.*
-import com.example.common.commonTest
 import com.varabyte.kobweb.compose.css.AnimationIterationCount
 import com.varabyte.kobweb.compose.css.functions.url
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -21,7 +20,6 @@ import org.jetbrains.compose.web.css.s
 @Composable
 fun HomePage() {
     Column(Modifier.fillMaxSize()) {
-        SpanText(commonTest())
         TestBox("red", RedBackgroundStyle.toModifier())
         TestBox("green", GreenBackgroundStyle.toModifier())
         TestBox("blue darker on hover", BlueDarkenOnHoverStyle.toModifier())
@@ -47,7 +45,6 @@ fun HomePage() {
         )
 
         TestBox("mainimage", Modifier.backgroundImage(url("/mainimage.png")).width(200.px))
-        TestBox("libimage", Modifier.backgroundImage(url("/libimage.png")).width(200.px))
     }
 }
 

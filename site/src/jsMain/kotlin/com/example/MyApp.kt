@@ -73,17 +73,6 @@ fun MyApp(content: @Composable () -> Unit) {
                     A("/success/x/x") {
                         Text("Mapped/Dynamic: Test2")
                     }
-                    // backend
-                    A("/backend/apis") {
-                        Text("Apis")
-                    }
-                    A("/backend/streams") {
-                        Text("Api Streams")
-                    }
-                    // lib
-                    A("/lib/test1") {
-                        Text("Lib: Test1")
-                    }
                     // libtest
                     A("/libtest/test1") {
                         Text("LibTest: Test1")
@@ -91,9 +80,6 @@ fun MyApp(content: @Composable () -> Unit) {
                     //markdown
                     A("/markdown") {
                         Text("Markdown")
-                    }
-                    A("/lib/markdown") {
-                        Text("Lib Markdown")
                     }
                 }
                 content()
