@@ -11,7 +11,7 @@ group = "com.example.lib"
 version = "1.0-SNAPSHOT"
 
 kotlin {
-    configAsKobwebLibrary(includeServer = true)
+    configAsKobwebLibrary()
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -26,11 +26,6 @@ kotlin {
                 implementation(libs.kobweb.silk)
                 implementation(libs.silk.icons.fa)
                 implementation(libs.kobwebx.markdown)
-            }
-        }
-        val jvmMain by getting {
-            dependencies {
-                implementation(libs.kobweb.api)
             }
         }
     }
