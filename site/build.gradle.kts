@@ -22,26 +22,20 @@ kotlin {
     configAsKobwebApplication("example", includeServer = true)
 
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(compose.runtime)
-                implementation(project(":lib"))
-            }
+        commonMain.dependencies {
+            implementation(compose.runtime)
+            implementation(project(":lib"))
         }
 
-        val jsMain by getting {
-            dependencies {
-                implementation(compose.html.core)
-                implementation(libs.kobweb.core)
-                implementation(libs.kobweb.silk)
-                implementation(libs.silk.icons.fa)
-                implementation(libs.kobwebx.markdown)
-            }
+        jsMain.dependencies {
+            implementation(compose.html.core)
+            implementation(libs.kobweb.core)
+            implementation(libs.kobweb.silk)
+            implementation(libs.silk.icons.fa)
+            implementation(libs.kobwebx.markdown)
         }
-        val jvmMain by getting {
-            dependencies {
-                implementation(libs.kobweb.api)
-            }
+        jvmMain.dependencies {
+            implementation(libs.kobweb.api)
         }
     }
 }

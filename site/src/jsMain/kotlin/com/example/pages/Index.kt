@@ -11,9 +11,9 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.core.Page
-import com.varabyte.kobweb.silk.components.animation.toAnimation
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.animation.toAnimation
+import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.s
 
@@ -25,7 +25,7 @@ fun HomePage() {
         TestBox("red", RedBackgroundStyle.toModifier())
         TestBox("green", GreenBackgroundStyle.toModifier())
         TestBox("blue darker on hover", BlueDarkenOnHoverStyle.toModifier())
-        TestBox("pink", RedBackgroundStyle.toModifier(LightRedVariant))
+        TestBox("pink", LightRedVariant.toModifier())
         TestBox("light green", GreenBackgroundStyle.toModifier(LightGreenVariant))
         TestBox("black", ReplacedByBlackStyle.toModifier())
 
